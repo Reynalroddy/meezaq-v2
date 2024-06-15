@@ -73,7 +73,7 @@ const Feature = ({
                 return (
                   <div className="flex mb-6 lg:last:mb-0" key={index}>
                     {/* <div className="text-2xl lg:text-3xl mr-4">{<item.icon>}</div> */}
-                    <item.icon className="w-12 h-12 mr-4 " />
+                    <item.icon className="w-9 h-9 mr-4 " />
                     <div>
                       <h4 className="text-lg  font-semibold mb-3">{title}</h4>
                       <p className="text-lg  font-medium mb-3">{subtitle}</p>

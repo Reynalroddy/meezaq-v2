@@ -10,7 +10,7 @@ const slides = [
     id: 1,
     title: " MEEZAQ ,Home of LUXURY",
     description: "Inspiring accessories delight!",
-    img: "/home-1.jpeg",
+    img: "/home.jpg",
     url: "/",
     bg: "bg-black/70",
   },
