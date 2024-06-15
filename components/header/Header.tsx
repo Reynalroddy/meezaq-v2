@@ -26,10 +26,10 @@ const Header = () => {
 
   return (
     <header
-      className={` fixed py-5  w-full transition-all duration-300 shadow-md bg-white dark:bg-black z-30 ${
+      className={` fixed  py-4 md:py-5  w-full transition-all duration-300 shadow-md bg-white dark:bg-black z-30 ${
         // if bg is true
         bg
-          ? "py-3 lg:py-4"
+          ? "py-2 md:py-3 lg:py-4"
           : // if bg is false
             ""
       }`}

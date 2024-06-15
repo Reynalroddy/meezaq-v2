@@ -31,7 +31,7 @@ const NewsLetter = () => {
                 type="text"
                 placeholder={"write a message"}
               />
-              <button className="bg-black dark:bg-white h-[60px] dark:text-black px-7 rounded-lg font-medium text-xl transition-all">
+              <button className="bg-black dark:bg-white h-[60px] dark:text-black px-7 rounded-lg font-medium text-xl transition-all mb-4 md:mb-0">
                 {"Submit"}
               </button>
             </div>

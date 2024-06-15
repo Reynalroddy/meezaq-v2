@@ -1,8 +1,8 @@
 import {
-  // IoLogoYoutube,
-  // IoLogoFacebook,
-  // IoLogoGithub,
-  // IoLogoInstagram,
+  IoLogoYoutube,
+  IoLogoFacebook,
+  IoLogoGithub,
+  IoLogoInstagram,
   // IoMdAddCircle,
   IoIosCheckmarkCircle,
   // IoIosArrowRoundForward,
@@ -109,4 +109,26 @@ export const features2 = {
       subtitle: "Elegance is assured in our products.",
     },
   ],
+};
+
+export const footer = {
+  social: [
+    {
+      icon: IoLogoYoutube,
+      href: "#",
+    },
+    {
+      icon: IoLogoInstagram,
+      href: "#",
+    },
+    {
+      icon: IoLogoGithub,
+      href: "#",
+    },
+    {
+      icon: IoLogoFacebook,
+      href: "#",
+    },
+  ],
+  copyright: "MEEZAQ 2024 - All Rights Reserved.",
 };

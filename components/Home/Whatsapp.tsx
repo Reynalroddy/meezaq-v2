@@ -8,7 +8,7 @@ const Whatsapp = () => {
       href="https://wa.me/8101006314"
       target="_blank"
     >
-      <BsWhatsapp className="w-[60px] h-[60px]  text-green-500" />
+      <BsWhatsapp className="w-[55px] h-[55px]  text-green-500" />
     </a>
   );
 };

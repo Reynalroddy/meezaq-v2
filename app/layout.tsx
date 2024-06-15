@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/header/Header";
 import Providers from "./providers";
 import Whatsapp from "@/components/Home/Whatsapp";
+import Footer from "@/components/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
             <Header />
             <main className=" w-full">{children}</main>
           </div>
+          <Footer />
           <Whatsapp />
         </Providers>
       </body>
