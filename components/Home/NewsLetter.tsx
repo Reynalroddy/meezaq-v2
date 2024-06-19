@@ -26,14 +26,16 @@ const NewsLetter = () => {
             </h2>
             <p className="text-xl font-light mb-10">Send us a message</p>
             <div className="flex flex-col lg:flex-row gap-[22px]">
-              <input
+              {/* <input
                 className=" h-[60px] px-6 outline-none placeholder:text-gray-400 text-gray-600 dark:text-white rounded-lg lg:flex-1"
                 type="text"
                 placeholder={"write a message"}
-              />
-              <button className="bg-black dark:bg-white h-[60px] dark:text-black px-7 rounded-lg font-medium text-xl transition-all mb-4 md:mb-0">
-                {"Submit"}
-              </button>
+              /> */}
+              <a className="" href="https://wa.me/8101006314" target="_blank">
+                <button className="bg-black dark:bg-white h-[60px] dark:text-black px-9 lg:px-14 rounded-lg font-medium text-xl transition-all mb-4 md:mb-0">
+                  {"Submit"}
+                </button>
+              </a>
             </div>
           </div>
         </div>

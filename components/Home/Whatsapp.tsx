@@ -1,6 +1,5 @@
 import React from "react";
 import { BsWhatsapp } from "react-icons/bs";
-import { GrWhatsapp } from "react-icons/gr";
 const Whatsapp = () => {
   return (
     <a

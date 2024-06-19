@@ -49,7 +49,7 @@ const ProductSlider = () => {
         const { name, image, price, id } = property;
         return (
           <article className="group relative" key={id}>
-            <Link href={`/properties/${id}`}>
+            <Link href={`/products/${id}`}>
               <div className="relative h-[300px] mb-2 overflow-hidden rounded-md">
                 <Image
                   src={image}

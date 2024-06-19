@@ -6,6 +6,7 @@ import {
   // IoMdAddCircle,
   IoIosCheckmarkCircle,
   // IoIosArrowRoundForward,
+  IoLogoTwitter,
 } from "react-icons/io";
 
 import ban1 from "../assets/ban-1.jpeg";
@@ -34,20 +35,20 @@ import ban31 from "../assets/ban-10.png";
 export const navigation = [
   {
     name: "home",
-    href: "home",
+    href: "/",
   },
   {
-    name: "about",
-    href: "about",
+    name: "Catalogues",
+    href: "/products",
   },
-  {
-    name: "features",
-    href: "features",
-  },
-  {
-    name: "contact",
-    href: "contact",
-  },
+  // {
+  //   name: "features",
+  //   href: "features",
+  // },
+  // {
+  //   name: "contact",
+  //   href: "contact",
+  // },
 ];
 
 export const stats = [
@@ -114,12 +115,12 @@ export const features2 = {
 export const footer = {
   social: [
     {
-      icon: IoLogoYoutube,
-      href: "#",
+      icon: IoLogoTwitter,
+      href: "https://twitter.com/meezaq_",
     },
     {
       icon: IoLogoInstagram,
-      href: "#",
+      href: "https://instagram.com/meezaq___",
     },
     {
       icon: IoLogoGithub,
@@ -127,8 +128,119 @@ export const footer = {
     },
     {
       icon: IoLogoFacebook,
-      href: "#",
+      href: "https://facebook.com/meezaq",
     },
   ],
   copyright: "MEEZAQ 2024 - All Rights Reserved.",
 };
+
+export const categories = {
+  section1: [
+    {
+      name: "Royal Furnitures",
+      href: "/products?category=royal",
+    },
+    {
+      name: "Contemporary Furnitures",
+      href: "/products?category=contemporary",
+    },
+    {
+      name: "Kiddies",
+      href: "/products?category=kiddies",
+    },
+    {
+      name: "Office Furnitures",
+      href: "/products?category=office",
+    },
+  ],
+
+  section2: [
+    {
+      name: "Doors",
+      href: "/products?category=doors",
+    },
+    {
+      name: "Rugs and Carpet",
+      href: "/products?category=rugs",
+    },
+    {
+      name: "Elevators",
+      href: "/products?category=elevators",
+    },
+    {
+      name: "Floor",
+      href: "/products?category=floor",
+    },
+  ],
+
+  section3: [
+    {
+      name: "Tiles",
+      href: "/products?category=tiles",
+    },
+    {
+      name: "Curtains/Blinds",
+      href: "/products?category=curtains",
+    },
+    {
+      name: "Chandeliers",
+      href: "/products?category=chandeliers",
+    },
+    {
+      name: "Bathroom/Toilet Fittings",
+      href: "/products?category=bathroom",
+    },
+  ],
+};
+
+export const categoriesFilter = [
+  {
+    name: "Royal Furnitures",
+    href: "/products?category=royal",
+  },
+  {
+    name: "Contemporary Furnitures",
+    href: "/products?category=contemporary",
+  },
+  {
+    name: "Kiddies",
+    href: "/products?category=kiddies",
+  },
+  {
+    name: "Office Furnitures",
+    href: "/products?category=office",
+  },
+  {
+    name: "Doors",
+    href: "/products?category=doors",
+  },
+  {
+    name: "Rugs and Carpet",
+    href: "/products?category=rugs",
+  },
+  {
+    name: "Elevators",
+    href: "/products?category=elevators",
+  },
+  {
+    name: "Floor",
+    href: "/products?category=floor",
+  },
+
+  {
+    name: "Tiles",
+    href: "/products?category=tiles",
+  },
+  {
+    name: "Curtains/Blinds",
+    href: "/products?category=curtains",
+  },
+  {
+    name: "Chandeliers",
+    href: "/products?category=chandeliers",
+  },
+  {
+    name: "Bathroom/Toilet Fittings",
+    href: "/products?category=bathroom",
+  },
+];

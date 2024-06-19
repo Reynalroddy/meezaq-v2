@@ -21,7 +21,8 @@ const Products = () => {
             {/* latest products added to our catalogues{" "} */}
             {/* <span className="underline  "> */}
             <Link href="" className="flex justify-center items-center">
-              view more <ArrowRight className="w-4 h-4 text-black mr-2" />
+              view more{" "}
+              <ArrowRight className="w-4 h-4 text-black  dark:text-white mr-2" />
             </Link>
             {/* </span> */}
           </p>
