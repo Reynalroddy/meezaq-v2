@@ -1,29 +1,25 @@
 "use client";
-// import useCurrentUser from "@/hooks/useCurrentUser";
+
 import { ProductType, productSchema } from "@/utils/schema";
 import React, { useEffect, useState } from "react";
-// import { useToast } from "../ui/use-toast";
+import { useToast } from "../ui/use-toast";
 import { Form } from "../ui/form";
 import {
   CustomFormField,
   CustomFormSelect,
   CustomTextArea,
 } from "../form/input";
-// import CustomButton from "../Button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-// import { createPropertyAction } from "@/utils/actions/actions";
 import { redirect, useRouter } from "next/navigation";
 import { UploadButton } from "@/utils/uploadthing";
 import { categoriesFilter } from "@/utils/data";
 import CustomButton from "../Button";
+import { createProductAction } from "@/utils/actions/actions";
 function CreateProduct() {
   const [loading, setLoading] = useState(false);
-  //   const { user, setUser } = useCurrentUser();
   const router = useRouter();
   const [imgSrc, setImgSrc] = useState("");
-  //   console.log(user);
-  // const currentUser = auth.user;
   const form = useForm<ProductType>({
     resolver: zodResolver(productSchema),
     defaultValues: {
@@ -32,38 +28,38 @@ function CreateProduct() {
       price: 1000,
       category: categoriesFilter[0].name,
       description: "",
-      weight: "",
+      weight: "65",
     },
     // errors
   });
-  //   const { toast } = useToast();
+  const { toast } = useToast();
   // console.log(form);
   async function onSubmit(values: ProductType) {
     setLoading(true);
     console.log(values);
 
-    //     try {
-    //       const result: any = await createPropertyAction(values);
-    //       console.log(result);
-    //       if (!result || result?.status === "false") {
-    //         toast({
-    //           variant: "destructive",
-    //           description: result.message || "rental not created",
-    //         });
-    //         // toast({ description: "user not updated" });
-    //         return;
-    //       }
-    //       toast({ description: "rental created" });
-    //       router.push("/");
-    //     } catch (error: any) {
-    //       console.log(error);
-    //       toast({
-    //         variant: "destructive",
-    //         description: error?.message || "something went wrong",
-    //       });
-    //     } finally {
-    //       setLoading(false);
-    //     }
+    try {
+      const result: any = await createProductAction(values);
+      console.log(result);
+      if (!result || result?.status === "false") {
+        toast({
+          variant: "destructive",
+          description: result.message || "product not created",
+        });
+        // toast({ description: "user not updated" });
+        return;
+      }
+      toast({ description: "product created" });
+      router.push("/");
+    } catch (error: any) {
+      console.log(error);
+      toast({
+        variant: "destructive",
+        description: error?.message || "something went wrong",
+      });
+    } finally {
+      setLoading(false);
+    }
   }
   return (
     <section className="container mx-auto pb-10 pt-24">
@@ -125,7 +121,7 @@ function CreateProduct() {
                     onClientUploadComplete={(res) => {
                       // Do something with the response
                       console.log(res);
-                      form.setValue("image", res[0].url);
+                      form.setValue("image", JSON.stringify(res));
                       setImgSrc(res[0].url);
                       console.log("Files: ", res);
                     }}

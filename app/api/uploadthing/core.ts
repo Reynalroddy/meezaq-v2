@@ -5,7 +5,7 @@ import { createUploadthing, type FileRouter } from "uploadthing/next";
 const f = createUploadthing();
 
 export const ourFileRouter = {
-  imageUploader: f({ image: { maxFileSize: "4MB", maxFileCount: 3 } })
+  imageUploader: f({ image: { maxFileSize: "4MB", maxFileCount: 20 } })
     // .middleware(async ({ req }) => {
     //   const session = await getServerSession();
     //   const user = session?.user;

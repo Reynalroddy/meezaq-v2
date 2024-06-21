@@ -2,16 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Stats from "./Stats";
 
-const slides = [
+export const slides = [
   {
     id: 1,
     title: " MEEZAQ ,Home of LUXURY",
     description: "Inspiring accessories delight!",
     img: "/home.jpg",
-    url: "/",
+    url: "/products",
     bg: "bg-black/70",
   },
   {
@@ -19,7 +19,7 @@ const slides = [
     title: "We Are Bursting With LUXURY",
     description: "Making furnishing fun again!",
     img: "/home-2.jpeg",
-    url: "/",
+    url: "/products",
     bg: "bg-gradient-to-r from-pink-50 to-blue-50",
   },
   {
@@ -27,7 +27,7 @@ const slides = [
     title: "Discover The Best Collections",
     description: "Interiors,fittings,beds,bath...",
     img: "/home-3.jpeg",
-    url: "/",
+    url: "/products",
     bg: "bg-gradient-to-r from-blue-50 to-yellow-50",
   },
   {
@@ -35,7 +35,7 @@ const slides = [
     title: "Your Satisfaction,Our Joy",
     description: "Over 100k luxury item delivered!",
     img: "/home-4.jpeg",
-    url: "/",
+    url: "/products",
     bg: "bg-gradient-to-r from-blue-50 to-yellow-50",
   },
 ];
@@ -52,7 +52,7 @@ const Slider = () => {
   //   }, []);
 
   return (
-    <div className="h-[900px] overflow-hidden  ">
+    <div className="h-[900px] overflow-hidden">
       <div
         className="w-max h-full flex transition-all ease-in-out duration-1000"
         style={{ transform: `translateX(-${current * 100}vw)` }}

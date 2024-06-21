@@ -1,10 +1,17 @@
-import Slider from "@/components/hero/Slider";
-import Stats from "@/components/hero/Stats";
-import Image from "next/image";
-import Feature from "@/components/features/Feature";
-import { features } from "@/utils/data";
-import { features2 } from "@/utils/data";
 import Homes from "@/components/Home/Home";
-export default function Home() {
-  return <Homes />;
+import { fetchProducts } from "@/utils/actions/actions";
+import { productProps } from "@/utils/types";
+async function Home({
+  searchParams,
+}: {
+  searchParams: { category?: string; search?: string };
+}) {
+  const category = searchParams?.category;
+  const products: productProps[] = await fetchProducts({
+    category,
+  });
+  console.log(products);
+  return <Homes products={products} />;
 }
+
+export default Home;

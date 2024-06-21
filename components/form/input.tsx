@@ -55,7 +55,7 @@ export function CustomFormField({
               required={required}
               defaultValue={defaultValue}
               {...field}
-              className="text-black"
+              className="text-black dark:text-white"
             />
           </FormControl>
           <FormMessage className="text-red-500" />
@@ -103,7 +103,7 @@ export function CustomFormSelect({
             <SelectContent>
               {items.map((item: any) => {
                 return (
-                  <SelectItem key={item.name} value={item.name}>
+                  <SelectItem key={item.name} value={item.value}>
                     <span className="flex items-center gap-2">{item.name}</span>
                   </SelectItem>
                 );

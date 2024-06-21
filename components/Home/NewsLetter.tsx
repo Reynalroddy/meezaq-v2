@@ -4,7 +4,7 @@ import footer from "../../assets/footer.jpg";
 import ban1 from "../../assets/ban-1.jpeg";
 const NewsLetter = () => {
   return (
-    <section className="section bg-primary min-h-[400px] ">
+    <section className="section  min-h-[400px] relative ">
       <div className="container mx-auto ">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-9">
           <div className="relative h-[300px]">
@@ -19,20 +19,22 @@ const NewsLetter = () => {
 
           <div
             className="w-full 
-           text-center lg:text-left text-white"
+           text-center lg:text-left "
           >
-            <h2 className="text-3xl font-semibold max-w-[350px] mx-auto lg:mx-0 mb-5 leading-normal">
+            <h2 className="text-3xl font-semibold  mx-auto lg:mx-0 mb-5 leading-normal dark:text-white text-black ">
               Have inquiries about our Products?
             </h2>
-            <p className="text-xl font-light mb-10">Send us a message</p>
+            <p className="text-xl font-light mb-10 dark:text-white text-black ">
+              Send us a message
+            </p>
             <div className="flex flex-col lg:flex-row gap-[22px]">
               {/* <input
                 className=" h-[60px] px-6 outline-none placeholder:text-gray-400 text-gray-600 dark:text-white rounded-lg lg:flex-1"
                 type="text"
                 placeholder={"write a message"}
               /> */}
-              <a className="" href="https://wa.me/8101006314" target="_blank">
-                <button className="bg-black dark:bg-white h-[60px] dark:text-black px-9 lg:px-14 rounded-lg font-medium text-xl transition-all mb-4 md:mb-0">
+              <a className="" href="https://wa.me/9134446144" target="_blank">
+                <button className="bg-black text-white dark:bg-white h-[60px] dark:text-black px-9 lg:px-14 rounded-lg font-medium text-xl transition-all mb-4 md:mb-0">
                   {"Submit"}
                 </button>
               </a>
@@ -40,6 +42,7 @@ const NewsLetter = () => {
           </div>
         </div>
       </div>
+      <div className="absolute top-[336px] h-[64px] bg-primary w-full hidden lg:block "></div>
     </section>
   );
 };

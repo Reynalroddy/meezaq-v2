@@ -14,3 +14,11 @@ export interface btnProps {
   type?: string;
   loading?: boolean;
 }
+
+export interface productProps {
+  id: string;
+  name: string;
+  image: string;
+  description: string;
+}
+[];

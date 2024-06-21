@@ -7,6 +7,7 @@ import { HiPlus } from "react-icons/hi";
 import { BsHeartFill } from "react-icons/bs";
 import Link from "next/link";
 import Image from "next/image";
+import { productProps } from "@/utils/types";
 
 const products = [
   {
@@ -42,17 +43,17 @@ const products = [
     oldPrice: 70,
   },
 ];
-const ProductSlider = () => {
+const ProductSlider = ({ prod }: { prod: productProps[] }) => {
   return (
     <section className="mt-4 gap-8 grid sm:grid-cols-2  lg:grid-cols-3  xl:grid-cols-4">
-      {products.map((property) => {
-        const { name, image, price, id } = property;
+      {prod.slice(0, 4).map((property) => {
+        const { name, image, id } = property;
         return (
           <article className="group relative" key={id}>
             <Link href={`/products/${id}`}>
               <div className="relative h-[300px] mb-2 overflow-hidden rounded-md">
                 <Image
-                  src={image}
+                  src={JSON.parse(image)[0].url}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
                   alt={name}
@@ -66,17 +67,12 @@ const ProductSlider = () => {
                 {/* property rating */}
                 {/* <PropertyRating inPage={false} propertyId={propertyId} /> */}
               </div>
-              <div className="flex justify-between items-center mt-1">
+              {/* <div className="flex justify-between items-center mt-1">
                 <p className="text-sm mt-1 ">
                   <span className="font-semibold">$ {price} </span>
                 </p>
-              </div>
+              </div> */}
             </Link>
-            <div className="absolute top-5 right-5 z-5">
-              <BsHeartFill className="text-white w-4 h-4" />
-              {/* favorite toggle button */}
-              {/* <FavoriteToggleButton propertyId={propertyId} /> */}
-            </div>
           </article>
         );
       })}

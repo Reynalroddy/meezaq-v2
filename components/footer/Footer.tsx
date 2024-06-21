@@ -1,8 +1,9 @@
 import { footer } from "@/utils/data";
 import React from "react";
 import Logo from "../header/Logo";
-import turkey from "../../assets/turkey.png";
+// import turkey from "./images.png";
 import nigeria from "../../assets/nigeria.png";
+
 import Image from "next/image";
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -15,13 +16,34 @@ const Footer = () => {
           </h3>
 
           <div className="flex flex-col gap-3 mb-3 md:mb-0">
-            <p className="text-md">No 4 Macenta Close, Abuja</p>
+            <div className="flex gap-3">
+              <Image
+                src={"/naija.png"}
+                width={20}
+                height={20}
+                alt=""
+                className="w-6 h-6 rounded-full"
+              />
+              <p className="md:text-md text-sm">
+                No 4 Macenta Close, Abuja Nigeria.
+              </p>
+            </div>
 
-            <p className="text-md ">
-              Aksaray Mah. Manastirli Rifat Sk. Yakut Apt. No: 21/1 Fatih
-              Istanbul, Turkey
-            </p>
-            <p className="text-md">contact@meezaq.com.ng</p>
+            <div className="flex gap-3">
+              <Image
+                src={"/images.png"}
+                width={20}
+                height={20}
+                alt=""
+                className="w-6 h-6 rounded-full"
+              />
+
+              <p className="md:text-md text-sm ">
+                Eğribucak mah fatih sultan,mehmet Bulvarı no 236
+                melikgazi,Kayseri. Turkey
+              </p>
+            </div>
+            {/* <p className="text-md">contact@meezaq.com.ng</p> */}
           </div>
 
           <div className="flex gap-x-4">

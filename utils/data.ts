@@ -1,11 +1,8 @@
 import {
-  IoLogoYoutube,
   IoLogoFacebook,
-  IoLogoGithub,
   IoLogoInstagram,
   // IoMdAddCircle,
   IoIosCheckmarkCircle,
-  // IoIosArrowRoundForward,
   IoLogoTwitter,
 } from "react-icons/io";
 
@@ -31,6 +28,7 @@ import ban28 from "../assets/ban-28.png";
 import ban29 from "../assets/ban-29.png";
 import ban30 from "../assets/ban-30.png";
 import ban31 from "../assets/ban-10.png";
+import { BsTelegram } from "react-icons/bs";
 
 export const navigation = [
   {
@@ -41,10 +39,10 @@ export const navigation = [
     name: "Catalogues",
     href: "/products",
   },
-  // {
-  //   name: "features",
-  //   href: "features",
-  // },
+  {
+    name: "Contact",
+    href: "contact",
+  },
   // {
   //   name: "contact",
   //   href: "contact",
@@ -123,8 +121,8 @@ export const footer = {
       href: "https://instagram.com/meezaq___",
     },
     {
-      icon: IoLogoGithub,
-      href: "#",
+      icon: BsTelegram,
+      href: "https://t.me/m33zaq",
     },
     {
       icon: IoLogoFacebook,
@@ -152,6 +150,11 @@ export const categories = {
       name: "Office Furnitures",
       href: "/products?category=office",
     },
+
+    {
+      name: "Outdoor Furnitures",
+      href: "/products?category=outdoor",
+    },
   ],
 
   section2: [
@@ -170,6 +173,10 @@ export const categories = {
     {
       name: "Floor",
       href: "/products?category=floor",
+    },
+    {
+      name: "Kitchen Furnitures",
+      href: "/products?category=kitchen",
     },
   ],
 
@@ -190,57 +197,88 @@ export const categories = {
       name: "Bathroom/Toilet Fittings",
       href: "/products?category=bathroom",
     },
+    {
+      name: "Marble",
+      href: "/products?category=marble",
+    },
   ],
 };
 
 export const categoriesFilter = [
   {
     name: "Royal Furnitures",
+    value: "royal",
     href: "/products?category=royal",
   },
   {
     name: "Contemporary Furnitures",
+    value: "contemporary",
     href: "/products?category=contemporary",
   },
   {
     name: "Kiddies",
+    value: "kiddies",
     href: "/products?category=kiddies",
   },
   {
     name: "Office Furnitures",
+    value: "office",
     href: "/products?category=office",
   },
   {
     name: "Doors",
+    value: "doors",
     href: "/products?category=doors",
   },
   {
     name: "Rugs and Carpet",
+    value: "rugs",
     href: "/products?category=rugs",
   },
   {
     name: "Elevators",
+    value: "elevators",
     href: "/products?category=elevators",
   },
   {
     name: "Floor",
+    value: "floor",
     href: "/products?category=floor",
   },
 
   {
     name: "Tiles",
+    value: "tiles",
     href: "/products?category=tiles",
   },
   {
     name: "Curtains/Blinds",
+    value: "curtains",
     href: "/products?category=curtains",
   },
   {
     name: "Chandeliers",
+    value: "chandeliers",
     href: "/products?category=chandeliers",
   },
   {
     name: "Bathroom/Toilet Fittings",
+    value: "bathroom",
     href: "/products?category=bathroom",
+  },
+  {
+    name: "Marble",
+    value: "marble",
+    href: "/products?category=marble",
+  },
+  {
+    name: "Kitchen Furnitures",
+    value: "kitchen",
+    href: "/products?category=kitchen",
+  },
+  {
+    name: "Outdoor Furnitures",
+    value: "outdoor",
+    href: "/products?category=outdoor",
   },
 ];

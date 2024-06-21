@@ -34,5 +34,19 @@ export const loginUserSchema = z.object({
   password: z.string(),
 });
 
+export function validateWithZodSchema<T>(
+  schema: ZodSchema<T>,
+  data: unknown
+): T {
+  const result = schema.safeParse(data);
+  console.log(result);
+  if (!result.success) {
+    const errors = result.error.errors.map((error) => error.message);
+
+    throw new Error(errors.join(","));
+  }
+  return result.data;
+}
+
 export type LoginType = z.infer<typeof loginUserSchema>;
 export type ProductType = z.infer<typeof productSchema>;

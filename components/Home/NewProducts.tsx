@@ -2,13 +2,14 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import ProductSlider from "./ProductSlider";
+import { productProps } from "@/utils/types";
 // import data
 // import { products } from '../data';
 
 // import components
 // import ProductSlider from './ProductSlider';
 
-const Products = () => {
+const Products = ({ prod }: { prod: productProps[] }) => {
   //   const { title, subtitle } = products;
   return (
     <section className="section text-center pb-[40px] lg:pb-[80px]">
@@ -20,14 +21,14 @@ const Products = () => {
           <p className="max-w-[639px] mx-auto mb-[50px] lg:mb-[70px]">
             {/* latest products added to our catalogues{" "} */}
             {/* <span className="underline  "> */}
-            <Link href="" className="flex justify-center items-center">
+            <Link href="/products" className="flex justify-center items-center">
               view more{" "}
               <ArrowRight className="w-4 h-4 text-black  dark:text-white mr-2" />
             </Link>
             {/* </span> */}
           </p>
         </div>
-        <ProductSlider />
+        <ProductSlider prod={prod} />
       </div>
     </section>
   );
