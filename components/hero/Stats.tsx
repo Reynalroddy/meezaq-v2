@@ -1,5 +1,5 @@
 import React from "react";
-
+import CountUp from "react-countup";
 import { stats } from "@/utils/data";
 const Stats = () => {
   return (
@@ -13,7 +13,7 @@ const Stats = () => {
                 className="min-h-[70px] w-3/6 lg:flex-1   odd:border-r lg:odd:border-r lg:even:border-r lg:even:last:border-none flex flex-col justify-center items-center"
               >
                 <div className="text-2xl lg:text-4xl font-semibold text-center">
-                  {item.value}
+                  <CountUp end={item.value} duration={3} />
                 </div>
                 <div className="text-base lg:text-xl font-light max-w-[110px] mx-auto text-center">
                   {item.text}

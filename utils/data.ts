@@ -51,19 +51,19 @@ export const navigation = [
 
 export const stats = [
   {
-    value: "10",
-    text: "Year's Experience",
+    value: 10,
+    text: "Year's of experience",
   },
   {
-    value: "2",
-    text: "Opened in the country",
+    value: 2,
+    text: "stores in two countries",
   },
   {
-    value: "100k+",
+    value: 100,
     text: "Furniture sold",
   },
   {
-    value: "1000+",
+    value: 1000,
     text: "Variant products",
   },
 ];

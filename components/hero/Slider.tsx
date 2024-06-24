@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Stats from "./Stats";
 
 export const slides = [
@@ -43,13 +43,13 @@ export const slides = [
 const Slider = () => {
   const [current, setCurrent] = useState(0);
 
-  //   useEffect(() => {
-  //     const interval = setInterval(() => {
-  //       setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-  //     }, 4000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    }, 5000);
 
-  //     return () => clearInterval(interval);
-  //   }, []);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="h-[900px] overflow-hidden">
@@ -68,7 +68,7 @@ const Slider = () => {
                 sizes="100%"
                 className="object-cover"
               />
-              <div className="absolute  top-[300px] md:left-[330px] bg-black/70 rounded-md p-2 md:p-10 mx-2 md:mx-0">
+              <div className="absolute  top-[300px] md:left-[330px] bg-black/50 rounded-md p-2 md:p-10 mx-2 md:mx-0">
                 <div className=" flex flex-col items-center justify-center gap-8 2xl:gap-12 text-center">
                   <h1 className="text-3xl lg:text-5xl 2xl:text-7xl font-semibold text-white">
                     {slide.title}

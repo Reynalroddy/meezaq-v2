@@ -22,7 +22,7 @@ const NewsLetter = () => {
            text-center lg:text-left "
           >
             <h2 className="text-3xl font-semibold  mx-auto lg:mx-0 mb-5 leading-normal dark:text-white text-black ">
-              Have inquiries about our Products?
+              Have enquiries about our Products?
             </h2>
             <p className="text-xl font-light mb-10 dark:text-white text-black ">
               Send us a message
