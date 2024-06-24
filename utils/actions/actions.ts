@@ -45,16 +45,15 @@ export const fetchProducts = async ({
   const properties = await prisma.product.findMany({
     where: {
       category,
-      // OR: [
-      //   { name: { contains: search, mode: "insensitive" } },
-      //   { tagline: { contains: search, mode: "insensitive" } },
-      // ],
     },
     select: {
       id: true,
       name: true,
       description: true,
       image: true,
+    },
+    orderBy: {
+      createdAt: "desc",
     },
   });
   return properties;
