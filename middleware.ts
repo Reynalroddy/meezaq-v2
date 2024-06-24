@@ -5,7 +5,7 @@ export default withAuth(
   function middleware(req) {
     const url = req?.nextUrl?.pathname;
     const isAdmin = req?.nextauth?.token?.role;
-
+    // console.log(req?.nextauth?.token);
     if (url?.startsWith("/admin") && isAdmin === false) {
       return NextResponse.redirect(new URL("/", req.url));
     }

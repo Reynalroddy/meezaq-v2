@@ -21,8 +21,10 @@ import {
   // NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
+import { signOut, useSession } from "next-auth/react";
 const Header = () => {
   const [bg, setBg] = useState(false);
+  const { data } = useSession();
   const [mobileNav, setMobileNav] = useState(false);
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -30,6 +32,7 @@ const Header = () => {
     });
   });
 
+  // console.log(data);
   return (
     <header
       className={` fixed  py-4 md:py-5  w-full transition-all duration-300 shadow-md bg-white dark:bg-black z-30 ${
@@ -114,14 +117,38 @@ const Header = () => {
                 );
               })}
               {/* checkifisloggedin */}
-              <li>
-                <Link
-                  className="capitalize text-black dark:text-white hover:border-b transition-all text-sm font-medium"
-                  href={"/admin"}
-                >
-                  Admin
-                </Link>
-              </li>
+
+              {!data?.user && (
+                <li>
+                  <Link
+                    className="capitalize text-black dark:text-white hover:border-b transition-all text-sm font-medium"
+                    href={"/auth/login"}
+                  >
+                    Login
+                  </Link>
+                </li>
+              )}
+
+              {data?.user && (
+                <li>
+                  <Link
+                    className="capitalize text-black dark:text-white hover:border-b transition-all text-sm font-medium"
+                    href={"/admin"}
+                  >
+                    Admin
+                  </Link>
+                </li>
+              )}
+              {data?.user && (
+                <li>
+                  <span
+                    className="capitalize text-black dark:text-white hover:border-b transition-all text-sm font-medium cursor-pointer"
+                    onClick={() => signOut()}
+                  >
+                    Logout
+                  </span>
+                </li>
+              )}
             </ul>
           </nav>
           <ModeToggle />

@@ -32,7 +32,11 @@ const LoginPage = () => {
 
     if (res?.url) {
       setLoading(false);
-      router.push("/");
+      toast({
+        title: "Success",
+        description: "Login successfully!",
+      });
+      router.push("/admin");
     } else {
       toast({
         variant: "destructive",

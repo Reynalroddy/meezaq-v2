@@ -1,9 +1,11 @@
-import React from "react";
+"use client";
 
+import React from "react";
 // import data
 import { navigation } from "@/utils/data";
 import { CgClose } from "react-icons/cg";
 import Link from "next/link";
+import { signOut, useSession } from "next-auth/react";
 const Navmobile = ({
   setMobileNav,
   mobileNav,
@@ -11,6 +13,7 @@ const Navmobile = ({
   setMobileNav: any;
   mobileNav: boolean;
 }) => {
+  const { data } = useSession();
   return (
     <nav className="bg-white dark:bg-black shadow-2xl w-full h-full">
       <div
@@ -33,14 +36,37 @@ const Navmobile = ({
           );
         })}
         {/* checkifisloggedin */}
-        <li>
-          <Link
-            className="text-xl font-medium capitalize text-black dark:text-white"
-            href="/admin"
-          >
-            Admin
-          </Link>
-        </li>
+        {!data?.user && (
+          <li>
+            <Link
+              className="text-xl font-medium capitalize text-black dark:text-white"
+              href={"/auth/login"}
+            >
+              Login
+            </Link>
+          </li>
+        )}
+        {data?.user && (
+          <li>
+            <Link
+              className="text-xl font-medium capitalize text-black dark:text-white"
+              href={"/admin"}
+            >
+              Admin
+            </Link>
+          </li>
+        )}
+
+        {data?.user && (
+          <li>
+            <span
+              className="text-xl font-medium capitalize text-black dark:text-white cursor-pointer"
+              onClick={() => signOut()}
+            >
+              Logout
+            </span>
+          </li>
+        )}
       </ul>
     </nav>
   );
