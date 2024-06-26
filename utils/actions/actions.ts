@@ -1,8 +1,11 @@
 "use server";
 
+import { redirect } from "next/navigation";
 // import { getServerSession } from "next-auth";
 import prisma from "../db";
 import { ProductType, productSchema, validateWithZodSchema } from "../schema";
+import { utapi } from "../uploadthing";
+import { revalidatePath } from "next/cache";
 
 export const renderError = (
   error: unknown
@@ -80,4 +83,25 @@ export const fetchProductDetails = (id: string) => {
     //   },
     // },
   });
+};
+
+export const deleteProduct = async (id: string, images: string) => {
+  const imgKey = JSON.parse(images);
+  const allKeys = imgKey.map((img: any) => {
+    return img.key;
+  });
+  try {
+    await utapi.deleteFiles(allKeys);
+    await prisma.product.delete({
+      where: {
+        id,
+      },
+    });
+    revalidatePath("/");
+    revalidatePath(`/products/[id]`, "page");
+    return { status: "true", message: "property deleted" };
+  } catch (error) {
+    return renderError(error);
+  }
+  // redirect("/");
 };

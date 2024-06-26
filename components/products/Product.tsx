@@ -1,10 +1,50 @@
 "use client";
 import { productProps } from "@/utils/types";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import { MinusIcon, PlusIcon } from "lucide-react";
+// import { MinusIcon, PlusIcon } from "lucide-react";
+import { useSession } from "next-auth/react";
+import { useToast } from "../ui/use-toast";
+import { useState } from "react";
+import { deleteProduct } from "@/utils/actions/actions";
+import { useRouter } from "next/navigation";
 
 function Product({ product }: { product: productProps }) {
-  const { image, name, description } = product;
+  const { image, name, description, id } = product;
+  const { data } = useSession();
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const { toast } = useToast();
+  // console.log(form);
+  async function onSubmit() {
+    setLoading(true);
+    console.log(id, image);
+    try {
+      const result: any = await deleteProduct(id, image);
+      // console.log(result);
+      // if (!result || result?.status === "false") {
+      //   toast({
+      //     variant: "destructive",
+      //     description: result.message || "product not deleted",
+      //   });
+      //   return;
+      // }
+      // console.log("deleted");
+      toast({
+        variant: "default",
+        description: result.message || "product  deleted",
+      });
+      // toast({ description: "product deleted" });
+      // router.push("/");
+    } catch (error: any) {
+      console.log(error);
+      toast({
+        variant: "destructive",
+        description: error?.message || "something went wrong",
+      });
+    } finally {
+      setLoading(false);
+    }
+  }
   return (
     <div className="py-8">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
@@ -71,18 +111,29 @@ function Product({ product }: { product: productProps }) {
               </div>
             </div>
 
-            <form className="mt-6">
-              <div className="mt-10 flex">
+            {/* <form className="mt-6"> */}
+            <div className="mt-16 flex gap-3">
+              <button
+                type="button"
+                className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-primary px-8 py-3 text-base font-medium text-white hover:bg-primary/70 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
+              >
+                <a href="https://wa.me/9134446144" target="_blank">
+                  Make A request
+                </a>
+              </button>
+
+              {data?.user && (
                 <button
-                  type="submit"
+                  disabled={loading}
+                  type="button"
                   className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-primary px-8 py-3 text-base font-medium text-white hover:bg-primary/70 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
+                  onClick={onSubmit}
                 >
-                  <a href="https://wa.me/9134446144" target="_blank">
-                    Make A request
-                  </a>
+                  Delete product
                 </button>
-              </div>
-            </form>
+              )}
+            </div>
+            {/* </form> */}
 
             <section aria-labelledby="details-heading" className="mt-12">
               <h2 id="details-heading" className="sr-only">
