@@ -1,12 +1,10 @@
 "use server";
 
-import { redirect } from "next/navigation";
-// import { getServerSession } from "next-auth";
+import { UTApi } from "uploadthing/server";
 import prisma from "../db";
 import { ProductType, productSchema, validateWithZodSchema } from "../schema";
-import { utapi } from "../uploadthing";
 import { revalidatePath } from "next/cache";
-
+const utapi = new UTApi();
 export const renderError = (
   error: unknown
 ): { message: string; status: string } => {
