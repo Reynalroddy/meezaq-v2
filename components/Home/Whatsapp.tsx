@@ -4,7 +4,7 @@ const Whatsapp = () => {
   return (
     <a
       className="fixed bottom-3 right-4"
-      href="https://wa.me/9134446144"
+      href="https://wa.me/905010022312"
       target="_blank"
     >
       <BsWhatsapp className="w-[55px] h-[55px]  text-green-500" />
