@@ -117,7 +117,7 @@ function Product({ product }: { product: productProps }) {
                 type="button"
                 className="flex max-w-xs flex-1 items-center justify-center rounded-md border border-transparent bg-primary px-8 py-3 text-base font-medium text-white hover:bg-primary/70 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-gray-50 sm:w-full"
               >
-                <a href="https://wa.me/9134446144" target="_blank">
+                <a href="https://wa.me/905010022312" target="_blank">
                   Make A request
                 </a>
               </button>
