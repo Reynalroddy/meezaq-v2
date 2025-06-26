@@ -155,6 +155,10 @@ export const categories = {
       name: "Outdoor Furnitures",
       href: "/products?category=outdoor",
     },
+    {
+      name: "Bedroom Furnitures",
+      href: "/products?category=bedroom",
+    },
   ],
 
   section2: [
@@ -229,6 +233,11 @@ export const categoriesFilter = [
     name: "Doors",
     value: "doors",
     href: "/products?category=doors",
+  },
+  {
+    name: "Bedroom",
+    value: "bedroom",
+    href: "/products?category=bedroom",
   },
   {
     name: "Rugs and Carpet",
